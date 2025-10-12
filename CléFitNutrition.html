@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CléFitNutrition.css">
+    <title>CléFit NUTRITION</title>
+</head>
+<body>
+    <!--NavBar CléFitNutrition-->
+    <header class="NavBarNutrition">
+        <a href="CléFitNutrition.html" class="Logo-Nutrition">
+            <img src="Pictures/542386526_17842046856574827_8310056253357928201_n.jpg" alt="LogoCléFitNutrition">
+        </a>  
+
+        <!--Liens du menu-->    
+        <nav class="menu-items" id="nav-links">                      
+            <a href="#">Produits</a>
+            <a href="#">À propos</a>            
+            <a href="Contact.html">Contact</a>
+            <span class="Dark-Light-Mode" id="Dark-Light-Mode" onclick="ChangeToDarkMod()">🌙</span>
+        </nav>
+
+
+        <!--Menu Hamburger Mobile -->
+        <div class="Menu-Hamburger" id="hamburger">
+            <span></span><span></span><span></span>
+        </div>
+    </header>
+
+    <section class="Accueil" id="Accueil">
+        <h1>Bienvenue chez CléFit NUTRITION</h1>
+        <h3>La clé de votre forme à tout âge</h3>
+        <span class="scroll-button down" onclick="scrollToProduits()">↓</span>
+    </section>
+
+    <section class="Top-Produits" id="Top-Produits"> 
+        <h2 class="BSCFN">Best-sellers de CléFitNutrition</h2>    
+        <span class="scroll-button up" onclick="scrollToAccueil()">↑</span>
+        <div class="cards-container">
+            <!-- 1 -->
+            <div class="card">
+                <img src="Pictures/MCOLG08000-MARIN-COLLAGENE-800GL-1500ML-20240530091528-2194435236.png" alt="Collagène Marin - Nutrimuscle">
+                <h2>Collagène Marin Naticol® en poudre</h2>
+                <p>- Le collagène idéal pour la peau et les cheveux.<br>
+                   - Peptides de collagène marin d’origine naturelle.<br>
+                   - Certifié Friends of the Sea.<br>
+                   - Dosage recommandé : 10 g par jour.
+                </p>
+            </div>
+
+            <!-- 2 -->
+            <div class="card">
+                <img src="Pictures/HyperMass-BioTechUSA + PROTEIN DRINK POWDER WITH CARBOHYDRATES AND CREATINE.jpg" alt="HyperMass">
+                <h2>HyperMass-BioTechUSA</h2>
+                <p class="PHMBTU">Avec 3 sources de protéines et 3 sources de glucides, enrichi en créatine micronisée.<br>
+                    Hyper Mass est une poudre pour boisson de prise de masse complète et complexe.<br>
+                    Trois types de protéines veillent à ce que tes muscles reçoivent ce dont ils ont besoin.
+                </p>
+            </div>
+
+            <!-- 3 -->
+            <div class="card">
+                <img src="Pictures/product_thumb.jpeg" alt="100% Professional WHEY">
+                <h2>100% Professional WHEY</h2>
+                <p class="PWHEY">Complément sportif composé uniquement de concentré de protéines de lactosérum issu du lait sucré au sucralose et aromatisé avec la saveur choisie. <br><br>
+                   Il s'agit d'une protéine de lactosérum 100 % concentrée, issue du lait obtenu par ultrafiltration. Il s'agit donc d'une protéine aux valeurs biologiques élevées et à forte concentration en BCAA. <br>
+                   Étant un concentré de protéines, son absorption est moyenne/rapide , il peut donc être pris à tout moment de la journée. <br>
+                </p>
+            </div>
+
+            <!-- 4 -->
+            <div class="card">
+                <img src="Pictures/EAA ZERO BioTechUSA Watermelon-Flavoured.jpg" alt="EAA Zero Watermelon Flavoured">
+                <h2>EAA Zero Watermelon Flavoured</h2>
+                <p class="EAAZWF">Les acides aminés essentiels sont des éléments constitutifs des protéines que l'organisme ne peut produire. Ils doivent donc être apportés par une alimentation équilibrée. <br><br>
+                   Ils sont essentiels au développement et à la régénération musculaires , mais contribuent également au bon fonctionnement du système immunitaire et du métabolisme , ainsi qu'aux performances mentales. <br>
+                </p>
+            </div>
+        </div>
+    </section>
+
+<!--Script CléFitNutrition-->
+<script src="CléFitNutrition.js"></script>
+</body>
+</html>

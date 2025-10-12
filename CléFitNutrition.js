@@ -1,0 +1,38 @@
+let Lightmod = false
+
+function ChangeToDarkMod(){
+    if(Lightmod){
+        Lightmod = false;
+        document.documentElement.style.setProperty("--text-color", "black");
+        document.documentElement.style.setProperty("--background-color", "#efe7e5");
+        document.getElementById("Dark-Light-Mode").innerHTML = "🌙";
+    }else{
+        //Dark Mod
+        Lightmod = true;
+        document.documentElement.style.setProperty("--text-color", "white");
+        document.documentElement.style.setProperty("--background-color", "rgb(61, 61, 61)");
+        document.getElementById("Dark-Light-Mode").innerHTML = "☀️";
+    }
+}
+
+function scrollToProduits() {
+  document.getElementById("Top-Produits").scrollIntoView({ behavior: "smooth" });
+}
+
+function scrollToAccueil() {
+  document.getElementById("Accueil").scrollIntoView({ behavior: "smooth" });
+}
+
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('nav-links');
+
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('active');
+  navLinks.classList.toggle('active');
+});
+
+
+
+
+
+
