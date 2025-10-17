@@ -17,11 +17,6 @@ body {
     color: var(--text-color);
 }
 
-/* Scroll fluide */
-html {
-    scroll-behavior: smooth;
-}
-
 .NavBarNutrition {
     position: absolute;
     top: 0;
@@ -70,126 +65,79 @@ html {
     transform: scale(1.2);
 }
 
-.Accueil {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;     
+.contact-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
     text-align: center;
-    height: 80vh;          
-    padding-top: 70px;       
-    padding-left: 2rem;
-    padding-right: 2rem;
-    background: var(--background-color);
 }
 
-.Accueil h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    color: var(--text-color);
+.contact-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    margin-top: 3rem;
+    color: #e67e22;
 }
 
-.Accueil h3 {
-    font-size: 1.5rem;
-    color: var(--text-color);
+.contact-section .intro {
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
 }
 
-/* Section pleine hauteur */
-section {
-    position: relative;
-    min-height: 100vh; 
-    padding: 6rem 2rem;
+/* Container flex pour contact + image */
+.contact-container {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    text-align: center;
+    gap: 2rem;
+    flex-wrap: wrap;
 }
 
-/* Bouton animé pour scroll */
-.scroll-button {
-    position: absolute;
-    font-size: 2rem;
-    color: var(--text-color);
-    cursor: pointer;
-    animation: bounce 1.5s infinite;
+/* Contact info */
+.contact-info {
+    flex: 1 1 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: left;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+    background: #fff;
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+}
+
+.contact-item span {
+    font-size: 1rem;
+    margin-right: 1rem;
+}
+
+.contact-item a {
+    color: #333;
     text-decoration: none;
-    user-select: none;
+    font-weight: 500;
 }
 
-/* Flèche vers le haut (Accueil) */
-.scroll-button.up {
-  top: 2rem;
-  z-index: 1000;
+.contact-item:hover {
+    transform: translateY(-3px);
 }
 
-/* Flèche vers le bas (Top-Produits) */
-.scroll-button.down {
-  bottom: 2rem;
+/* Image boutique */
+.contact-image {
+    flex: 1 1 300px;
 }
 
-.Top-Produits h2.BSCFN {
-    margin: 0 0 2rem 0;
-    font-size: 2rem;
-    color: var(--text-color);
-    text-align: center;
-}
-
-.cards-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-  width: 100%;
-  margin-top: 2rem;
-}
-
-.card {
-  flex: 1 1 300px;
-  max-width: 400px;
-  padding: 20px;
-  background: linear-gradient(45deg,rgba(255,255,255,0.1),rgba(255,255,255,0.2));
-  backdrop-filter: blur(10px);
-  box-shadow: 0 0 20px rgba(0,0,0,0.3);
-  border-radius: 10px;
-  text-align: center
-}
-
-.card img {
-  width: 150px;
-  border-radius: 50%;
-  border: 2px solid var(--text-color);
-}
-
-.card h2 {
-  color: var(--text-color);
-  font-weight: normal;
-  font-size: 25px;
-  margin: 1rem 0;
-}
-
-.card p {
-  color: var(--text-color);
-  text-align: justify;
-  font-size: 15px;
-}
-
-.card p.PHMBTU {
-    text-align: center;
-}
-
-.card p.PWHEY {
-    text-align: center;
-}
-
-.card p.EAAZWF {
-    text-align: center;
-}
-
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-    40% { transform: translateY(-10px); }
-    60% { transform: translateY(-5px); }
+.contact-image img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
 }
 
 /*-----VERSION MOBILE-----*/
@@ -224,7 +172,7 @@ section {
 }
 
 /* RESPONSIVE POUR MOBILE */
-@media (max-width: 982px) {
+@media (max-width: 928px) {
     .NavBarNutrition {
         position: absolute;
         top: 0;
@@ -243,7 +191,7 @@ section {
         right: -100%;
         height: 100vh;
         width: 70%;
-        background-color: #ebf58364;
+        background-color: #f2be0089;
         backdrop-filter: blur(10px);
         flex-direction: column;
         justify-content: center;
@@ -270,19 +218,16 @@ section {
         border-radius: 2px;
     }
 
-    .card {
-        max-width: 90%;
+    .contact-container {
+        flex-direction: column;
+        align-items: center;
     }
 
-  .Accueil h1 {
-        font-size: 2rem;
+    .contact-info {
+        text-align: center;
     }
 
-  .Accueil h3 {
-        font-size: 1.2rem;
+    .contact-item {
+        justify-content: center;
     }
 }
-
-
-
-

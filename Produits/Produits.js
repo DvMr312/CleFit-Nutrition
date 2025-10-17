@@ -9,7 +9,7 @@ function ChangeToDarkMod(){
     }else{
         //Dark Mod
         Lightmod = true;
-        document.documentElement.style.setProperty("--text-color", "white");
+        document.documentElement.style.setProperty("--text-color", "rgba(255, 255, 255, 1)");
         document.documentElement.style.setProperty("--background-color", "rgb(61, 61, 61)");
         document.getElementById("Dark-Light-Mode").innerHTML = "☀️";
     }
