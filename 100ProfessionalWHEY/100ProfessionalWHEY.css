@@ -85,7 +85,7 @@ body {
 
 /* --- Image --- */
 .image-produit {
-  flex: 1 1 400px;
+  flex: 1 1 350px;
   position: relative;
   border-radius: 10px;
   overflow: hidden;
@@ -93,8 +93,8 @@ body {
 
 .image-produit img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: 40%;
+  object-fit: inherit ;
   border-radius: 10px;
 }
 

@@ -149,8 +149,8 @@ section {
   max-width: 400px;
   padding: 20px;
   background: linear-gradient(45deg,rgba(255,255,255,0.1),rgba(255,255,255,0.2));
-  backdrop-filter: blur(10px);
-  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  backdrop-filter: blur(10px);  
+  box-shadow: 0 4px 15px 1px rgba(82, 255, 99, 0.59);
   border-radius: 10px;
   text-align: center
 }
@@ -221,6 +221,13 @@ section {
 }
 .Menu-Hamburger.active span:nth-child(3) {
   transform: translateY(-7.5px) rotate(-45deg);
+}
+
+footer {
+    text-align: center;
+    font-size: 0.9em;
+    color: #777;
+    padding: 20px;
 }
 
 /* RESPONSIVE POUR MOBILE */
