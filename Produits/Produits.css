@@ -209,7 +209,7 @@ body {
 }
 
 /* RESPONSIVE POUR MOBILE */
-@media (max-width: 928px) {
+@media (max-width: 721px) {
     .NavBarNutrition {
       position: absolute;
       top: 0;
