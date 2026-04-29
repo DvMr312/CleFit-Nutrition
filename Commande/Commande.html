@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Commande.css">
+    <title>Commande</title>
+</head>
+<body>
+    <!--NavBar CléFitNutrition-->
+    <header class="NavBarNutrition">
+        <a href="../CléFitNutrition/CléFitNutrition.html" class="Logo-Nutrition">
+            <img src="../Pictures/542386526_17842046856574827_8310056253357928201_n.jpg" alt="LogoCléFitNutrition">
+        </a>  
+
+        <!--Liens du menu-->    
+        <nav class="menu-items" id="nav-links">                      
+            <a href="../Produits/Produits.html">Produits</a>
+            <a href="../Commande/Commande.html">Commande</a>            
+            <a href="../Contact/Contact.html">Contact</a>
+            <span class="Dark-Light-Mode" id="Dark-Light-Mode" onclick="ChangeToDarkMod()">🌙</span>
+        </nav>
+
+
+        <!--Menu Hamburger Mobile -->
+        <div class="Menu-Hamburger" id="hamburger">
+            <span></span><span></span><span></span>
+        </div>
+    </header>
+
+    <h2>Informations client</h2>
+
+        <form id="order-form">
+            <input type="text" name="nom" placeholder="Nom" required>
+            <input type="text" name="prenom" placeholder="Prénom" required>
+            <input type="text" name="adresse" placeholder="Adresse" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="tel" name="telephone" placeholder="Téléphone" required>
+            <button type="submit">Envoyer la commande</button>
+        </form>
+        <div id="cart"></div>
+
+       
+<script src="Commande.js"></script>
+</body>
+</html>
