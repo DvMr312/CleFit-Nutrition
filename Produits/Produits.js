@@ -28,15 +28,56 @@ function addToCart(name, price) {
   // 1. Récupérer le panier actuel
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-  // 2. Ajouter le produit
-  cart.push({
-    name: name,
-    price: price
-  });
+  // 1.1 Recherche existence produit
+  const existingProduct = cart.find(
+        item => item.name === name
+    );
+
+    if (existingProduct) {
+
+        existingProduct.quantity++;
+
+    } else {
+
+        // 2. Ajouter le produit
+        cart.push({
+            name: name,
+            price: price,
+            quantity: 1
+        });
+    }
 
   // 3. Sauvegarder
   localStorage.setItem("cart", JSON.stringify(cart));
 
   // 4. Feedback utilisateur
-  alert("Produit ajouté au panier !");
+  showNotification("Produit ajouté au panier !");
+}
+
+//Re-Stock/Rupture-de-stock controle
+function updateStockButtons() {
+
+    document.querySelectorAll(".produit-card").forEach(card => {
+
+        const rupture = card.querySelector(".stock-label.rupture");
+        const button = card.querySelector(".AddToCart");
+
+        if (rupture && button) {
+            button.disabled = true;
+            button.title = "Produit en rupture de stock";
+        }
+    });
+}
+updateStockButtons();
+
+function showNotification(message) {
+
+    const notif = document.getElementById("notification");
+
+    notif.textContent = message;
+    notif.classList.add("show");
+
+    setTimeout(() => {
+        notif.classList.remove("show");
+    }, 3000);
 }

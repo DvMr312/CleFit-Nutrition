@@ -30,17 +30,30 @@
 
     <h2>Informations client</h2>
 
-        <form id="order-form">
-            <input type="text" name="nom" placeholder="Nom" required>
-            <input type="text" name="prenom" placeholder="Prénom" required>
-            <input type="text" name="adresse" placeholder="Adresse" required>
-            <input type="email" name="email" placeholder="Email" required>
-            <input type="tel" name="telephone" placeholder="Téléphone" required>
-            <button type="submit">Envoyer la commande</button>
-        </form>
-        <div id="cart"></div>
+    <form id="order-form">
+        <input type="text" id="nom" name="nom" placeholder="Nom" required>
+        <input type="text" id="prenom" name="prenom" placeholder="Prénom" required>
+        <input type="text" id="adresse" name="adresse" placeholder="Adresse" required>
+        <input type="email" id="email" name="email" placeholder="Email" required>
+        <input type="tel" id="telephone" name="telephone" placeholder="Téléphone" pattern="[0-9]{10}"required>
+        <button type="submit">Envoyer la commande</button>
+        <button type="button" onclick="clearCart()">Vider le panier</button>
+    </form>
+    <div id="cart"></div>
 
-       
+<div id="order-message" class="order-message">
+    Votre commande a bien été envoyée !
+</div>
+
+<div id="order-messageEmptyCart" class="order-messageEmptyCart">
+    Votre panier est vide
+</div>
+
+<button id="download-pdf" style="display:none;">
+  Télécharger le récapitulatif PDF
+</button>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <script src="Commande.js"></script>
 </body>
 </html>

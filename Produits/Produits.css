@@ -197,6 +197,31 @@ body {
   background: #cf711f;
 }
 
+.AddToCart:disabled {
+  opacity: 0.4;
+   cursor: not-allowed;
+}
+
+.notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #2ecc71;
+  color: white;
+  padding: 15px 25px;
+  border-radius: 10px;
+  font-weight: bold;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+  z-index: 9999;
+}
+
+.notification.show {
+    opacity: 1;
+    visibility: visible;
+}
+
 /*-----VERSION MOBILE-----*/
 .Menu-Hamburger {
   display: none;

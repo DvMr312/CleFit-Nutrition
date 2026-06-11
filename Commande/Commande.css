@@ -11,7 +11,6 @@
   --text-color: #000;
 }
 
-
 body {
   font-family: 'Poppins', sans-serif;
   background-color: var(--background-color);
@@ -174,6 +173,70 @@ h2 {
   margin-top: 1rem;
   font-size: 1.2rem;
   color: #e67e22;
+}
+
+.DeleteButton {
+  background-color: #ff0000d5;
+  border-color: rgba(255, 0, 0, 0.586);
+  border-radius: 3px;
+  cursor: pointer;
+  margin: 10px;
+  padding: 5px;
+}
+
+.DeleteButton img {
+  width: 24px;
+  height: 24px;
+}
+
+.decreaseincrease {
+  margin: 5px;
+  padding: 15px;
+  background-color: #e67e22;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+
+}
+
+.order-message {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #27ae60;
+  color: white;
+  padding: 15px 25px;
+  border-radius: 10px;
+  font-weight: bold;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+  z-index: 9999;
+}
+
+.order-message.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.order-messageEmptyCart {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #ae2727;
+  color: white;
+  padding: 15px 25px;
+  border-radius: 10px;
+  font-weight: bold;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+  z-index: 9999;
+}
+
+.order-messageEmptyCart.show {
+  opacity: 1;
+  visibility: visible;
 }
 
 /* RESPONSIVE POUR MOBILE */
