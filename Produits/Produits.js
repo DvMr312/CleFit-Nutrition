@@ -23,6 +23,32 @@ hamburger.addEventListener('click', () => {
   navLinks.classList.toggle('active');
 });
 
+/*Recherche de produit et filtre*/
+const search = document.getElementById("search");
+const category = document.getElementById("categorie-filtre");
+const products = document.querySelectorAll(".produit-card");
+
+function filterProducts() {
+    const searchValue = search.value.toLowerCase();
+    const categoryValue = category.value;
+
+    products.forEach(product => {
+        const title = product.querySelector("h2").textContent.toLowerCase();
+        const productCategory = product.dataset.category;
+
+        const matchesSearch = title.includes(searchValue);
+        const matchesCategory = categoryValue === "all" || productCategory === categoryValue;
+
+        if (matchesSearch && matchesCategory) {
+            product.style.display = "";
+        } else {
+            product.style.display = "none";
+        }
+    });
+}
+search.addEventListener("input", filterProducts);
+category.addEventListener("change", filterProducts);
+
 /*Fonction ajouter au panier*/
 function addToCart(name, price) {
   // 1. Récupérer le panier actuel

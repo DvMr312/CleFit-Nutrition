@@ -33,6 +33,23 @@
         <h1>Nos produits</h1>
         <p>Découvrez notre sélection de compléments de qualité.</p>
 
+        <select id="categorie-filtre">
+            <option value="all">Toutes les catégories</option>
+            <option value="proteines">Protéines</option>
+            <option value="prisedemasse">Prise de masse</option>
+            <option value="creatine">Créatine</option>
+            <option value="bcaa">BCAA / EAA</option>
+            <option value="vitamines">Vitamines</option>
+        </select> <br><br>
+
+        <div class="search-container">
+            <input
+                type="text"
+                id="search"
+                placeholder="Rechercher un produit"
+            >
+        </div><br><br>
+
         <div class="produits-container">
             
             <!---------------------------------------------------------------------------------------Collagène Marin Naticol en poudre----------------------------------------------------------------------------------------------------------->
@@ -56,7 +73,7 @@
             </div>
 
             <!------------------------------------------------------------------------------------------------HyperMass-BioTechUSA-------------------------------------------------------------------------------------------------------------->
-            <div class="produit-card">
+            <div class="produit-card" data-category="prisedemasse">
                 <div class="stock-label rupture">Rupture de stock</div>
                 <div class="img-container">                     
                     <img src="../Pictures/HyperMass-BioTechUSA + PROTEIN DRINK POWDER WITH CARBOHYDRATES AND CREATINE.jpg" alt="HyperMass-BioTechUSA">
@@ -74,7 +91,7 @@
             </div>
 
             <!-------------------------------------------------------------------------------------------100 % Professional WHEY----------------------------------------------------------------------------------------------------------------->
-            <div class="produit-card">                
+            <div class="produit-card" data-category="prisedemasse">                
                 <div class="stock-label rupture">Rupture de stock</div>
                 <div class="img-container">
                     <img src="../Pictures/product_thumb.jpeg" alt="100% Professional WHEY">
@@ -110,7 +127,7 @@
             </div>
 
             <!--------------------------------------------------------------------------------------Crème de riz (1 kg) Superset Nutrition------------------------------------------------------------------------------------------------------->
-            <div class="produit-card">                
+            <div class="produit-card" data-category="prisedemasse">                
                 <div class="stock-label en-stock">En stock</div>
                 <div class="img-container">
                     <img src="../Pictures/rice-cream-3x1kg-1624760595.jpg" alt="Crème de riz (1 kg) Superset Nutrition">
@@ -128,7 +145,7 @@
             </div>
 
             <!--------------------------------------------------------------------------------------Crème de riz (2 kg) Applied Nutrition Raspberry------------------------------------------------------------------------------------------------------->
-            <div class="produit-card">                
+            <div class="produit-card" data-category="prisedemasse">                
                 <div class="stock-label en-stock">En stock</div>
                 <div class="img-container">
                     <img src="../Pictures/Cream_of_Rice_2kg_-_Raspberry_Ripple.webp" alt="Crème de riz (2 kg) Applied Nutrition Raspberry">

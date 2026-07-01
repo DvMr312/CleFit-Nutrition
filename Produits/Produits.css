@@ -65,6 +65,54 @@ body {
   transform: scale(1.2);
 }
 
+#categorie-filtre {
+  width: 300px;
+  padding: 12px 18px;
+  background: #adadad;
+  color: #fff;
+  border: 2px solid #ffffff;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  outline: none;
+  transition: 0.25s ease;
+  box-shadow: 0 0 10px rgba(230, 57, 70, 0.2);
+}
+
+#categorie-filtre::placeholder {
+  color: #bdbdbd;
+}
+
+#categorie-filtre:focus {
+  border-color: #e67e22;
+  box-shadow: 0 0 15px #e67e22;
+  transform: scale(1.02);
+}
+
+#search {
+  width: 300px;
+  padding: 12px 18px;
+  background: #0f0335;
+  color: #fff;
+  border: 2px solid #e67e22;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  outline: none;
+  transition: 0.25s ease;
+  box-shadow: 0 0 10px rgba(230, 57, 70, 0.2);
+}
+
+#search::placeholder {
+  color: #bdbdbd;
+}
+
+#search:focus {
+  border-color: #e67e22;
+  box-shadow: 0 0 15px #e67e22;
+  transform: scale(1.02);
+}
+
 .produits {
   text-align: center;
   padding: 4rem 2rem;
