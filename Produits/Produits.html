@@ -17,7 +17,10 @@
         <!--Liens du menu-->    
         <nav class="menu-items" id="nav-links">                      
             <a href="../Produits/Produits.html">Produits</a>
-            <a href="../Commande/Commande.html">Commande</a>            
+            <a href="../Commande/Commande.html" class="cart-link">
+                Commande
+                <span id="cart-badge">0</span>
+            </a>          
             <a href="../Contact/Contact.html">Contact</a>
             <span class="Dark-Light-Mode" id="Dark-Light-Mode" onclick="ChangeToDarkMod()">🌙</span>
         </nav>
@@ -35,11 +38,14 @@
 
         <select id="categorie-filtre">
             <option value="all">Toutes les catégories</option>
-            <option value="proteines">Protéines</option>
+            <option value="Protéines">Protéines</option>
             <option value="prisedemasse">Prise de masse</option>
-            <option value="creatine">Créatine</option>
-            <option value="bcaa">BCAA / EAA</option>
-            <option value="vitamines">Vitamines</option>
+            <option value="Créatine">Créatine</option>
+            <option value="EAA">EAA</option>
+            <option value="Vitamines">Vitamines</option>            
+            <option value="Collagène">Collagène</option>                     
+            <option value="Glucides">Glucides</option>                     
+            <option value="Bien-être">Bien-être</option>           
         </select> <br><br>
 
         <div class="search-container">
@@ -53,7 +59,7 @@
         <div class="produits-container">
             
             <!---------------------------------------------------------------------------------------Collagène Marin Naticol en poudre----------------------------------------------------------------------------------------------------------->
-            <div class="produit-card">                
+            <div class="produit-card" data-category="Collagène">                
                 <div class="stock-label en-stock">En stock</div>
                 <div class="img-container">
                     <img src="../Pictures/Collagène Marin Naticol® en poudre.jpg" alt="Collagène Marin Naticol® en poudre">
@@ -91,7 +97,7 @@
             </div>
 
             <!-------------------------------------------------------------------------------------------100 % Professional WHEY----------------------------------------------------------------------------------------------------------------->
-            <div class="produit-card" data-category="prisedemasse">                
+            <div class="produit-card" data-category="Protéines">                
                 <div class="stock-label rupture">Rupture de stock</div>
                 <div class="img-container">
                     <img src="../Pictures/product_thumb.jpeg" alt="100% Professional WHEY">
@@ -109,7 +115,7 @@
             </div>
 
             <!--------------------------------------------------------------------------------------EAA ZER BioTechUSA Watermelon-Flavoured----------------------------------------------------------------------------------------------------->
-            <div class="produit-card">                
+            <div class="produit-card" data-category="EAA">                
                 <div class="stock-label en-stock">En stock</div>
                 <div class="img-container">
                     <img src="../Pictures/EAA ZERO BioTechUSA Watermelon-Flavoured.jpg" alt="EAA Zero Watermelon Flavoured">
@@ -127,7 +133,7 @@
             </div>
 
             <!--------------------------------------------------------------------------------------Crème de riz (1 kg) Superset Nutrition------------------------------------------------------------------------------------------------------->
-            <div class="produit-card" data-category="prisedemasse">                
+            <div class="produit-card" data-category="Glucides">                
                 <div class="stock-label en-stock">En stock</div>
                 <div class="img-container">
                     <img src="../Pictures/rice-cream-3x1kg-1624760595.jpg" alt="Crème de riz (1 kg) Superset Nutrition">
@@ -145,7 +151,7 @@
             </div>
 
             <!--------------------------------------------------------------------------------------Crème de riz (2 kg) Applied Nutrition Raspberry------------------------------------------------------------------------------------------------------->
-            <div class="produit-card" data-category="prisedemasse">                
+            <div class="produit-card" data-category="Glucides">                
                 <div class="stock-label en-stock">En stock</div>
                 <div class="img-container">
                     <img src="../Pictures/Cream_of_Rice_2kg_-_Raspberry_Ripple.webp" alt="Crème de riz (2 kg) Applied Nutrition Raspberry">
@@ -161,8 +167,8 @@
                 </div>
             </div>
 
-            <!-------------------------------------------------------------------------------------Ashwagandha bio KSM-66------------------------------------------------------------------------------------------------------->
-            <div class="produit-card">                
+            <!------------------------------------------------------------------------------------------------Ashwagandha bio KSM-66------------------------------------------------------------------------------------------------------->
+            <div class="produit-card" data-category="Bien-être">                
                 <div class="stock-label rupture">Rupture de stock</div>
                 <div class="img-container">
                     <img src="../Pictures/Front_Ashawagandha-min.webp" alt="Ashwagandha bio KSM-66">
@@ -180,7 +186,7 @@
             </div>
 
             <!--------------------------------------------------------------------------------------------Platinum creatine (200g)------------------------------------------------------------------------------------------------------->
-            <div class="produit-card">                
+            <div class="produit-card" data-category="Créatine">                
                 <div class="stock-label en-stock">En stock</div>
                 <div class="img-container">
                     <img src="../Pictures/platinum-creatine-200g-589327738.jpg" alt="Platinum creatine (200g)">
@@ -196,6 +202,22 @@
                 </div>
             </div>
 
+            <!--------------------------------------------------------------------------------------------Crème de riz pomme (1kg) ------------------------------------------------------------------------------------------------------->
+            <div class="produit-card" data-category="Glucides">                
+                <div class="stock-label en-stock">En stock</div>
+                <div class="img-container">
+                    <img src="../Pictures/CreamofRice1kg-AppleCrumble.webp" alt="Crème de riz pomme (1 kg) Applied Nutrition">
+                </div>
+                <h2>Crème de riz pomme (1 kg) Applied Nutrition</h2>
+                <p>La crème de riz d'Applied Nutrition est une excellente source de glucides, facile à digérer et savoureuse. <br><br>
+                   Adaptée aux végétaliens, elle constitue une source d'énergie idéale pour vous rassasier et vous donner l'énergie nécessaire pour bien démarrer la journée.</p>
+                <div class="card-footer">
+                    <button class="AddToCart" onclick="addToCart('Crème de riz pomme (1 kg) Applied Nutrition', 25.80)"><img src="../Pictures/png-clipart-shopping-cart-icon-shopping-cart-black-design-2188879113.png" alt="Panier"></button>
+                    <span class="prix">25,80 €</span>
+                    <a href="../CrèmeDeRizpomme1kgAppliedNutrition/CrèmeDeRizpomme1kgAppliedNutrition.html" class="btn">En savoir plus</a>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -204,5 +226,6 @@
 </div>
 
 <script src="Produits.js"></script>
+<script src="../Common.js"></script>
 </body>
 </html>

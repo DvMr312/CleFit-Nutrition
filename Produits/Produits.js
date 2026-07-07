@@ -23,7 +23,6 @@ hamburger.addEventListener('click', () => {
   navLinks.classList.toggle('active');
 });
 
-/*Recherche de produit et filtre*/
 const search = document.getElementById("search");
 const category = document.getElementById("categorie-filtre");
 const products = document.querySelectorAll(".produit-card");
@@ -49,38 +48,26 @@ function filterProducts() {
 search.addEventListener("input", filterProducts);
 category.addEventListener("change", filterProducts);
 
-/*Fonction ajouter au panier*/
 function addToCart(name, price) {
-  // 1. Récupérer le panier actuel
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-  // 1.1 Recherche existence produit
   const existingProduct = cart.find(
         item => item.name === name
     );
 
     if (existingProduct) {
-
         existingProduct.quantity++;
-
     } else {
-
-        // 2. Ajouter le produit
         cart.push({
             name: name,
             price: price,
             quantity: 1
         });
     }
-
-  // 3. Sauvegarder
-  localStorage.setItem("cart", JSON.stringify(cart));
-
-  // 4. Feedback utilisateur
+  saveCart(cart);
+  updateCartBadge();
   showNotification("Produit ajouté au panier !");
 }
 
-//Re-Stock/Rupture-de-stock controle
 function updateStockButtons() {
 
     document.querySelectorAll(".produit-card").forEach(card => {

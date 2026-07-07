@@ -16,7 +16,10 @@
         <!--Liens du menu-->    
         <nav class="menu-items" id="nav-links">                      
             <a href="../Produits/Produits.html">Produits</a>
-            <a href="../Commande/Commande.html">Commande</a>            
+            <a href="../Commande/Commande.html" class="cart-link">
+                Commande
+                <span id="cart-badge">0</span>
+            </a>             
             <a href="../Contact/Contact.html">Contact</a>
             <span class="Dark-Light-Mode" id="Dark-Light-Mode" onclick="ChangeToDarkMod()">🌙</span>
         </nav>
@@ -56,5 +59,6 @@
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <script src="Commande.js"></script>
+<script src="../Common.js"></script>
 </body>
 </html>

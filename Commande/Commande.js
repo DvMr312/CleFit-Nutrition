@@ -24,7 +24,6 @@ hamburger.addEventListener('click', () => {
 });
 emailjs.init("B8iZsCS5JszT1aExp");
 
-/*Fonction montrer le panier*/
 function displayCart() {
   const cart = JSON.parse(localStorage.getItem("cart")) || [];
   const container = document.getElementById("cart");
@@ -63,12 +62,11 @@ function removeFromCart(index) {
 
   cart.splice(index, 1);
 
-  localStorage.setItem("cart", JSON.stringify(cart));
-  
+  saveCart(cart);
+  updateCartBadge();  
   displayCart();
 
 }
-
 function clearCart() {
   localStorage.removeItem("cart");
   displayCart();
@@ -90,7 +88,8 @@ function increaseQuantity(index){
 
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
   cart[index].quantity++;
-  localStorage.setItem("cart", JSON.stringify(cart));
+  saveCart(cart);
+  updateCartBadge(); 
   displayCart();
 }
 
@@ -101,11 +100,11 @@ function decreaseQuantity(index){
   if(cart[index].quantity <= 0){
     cart.splice(index,1);
   }
-  localStorage.setItem("cart", JSON.stringify(cart));
+  saveCart(cart);
+  updateCartBadge(); 
   displayCart();
 }
 
-// Fonction qui transforme le panier en texte
 function getCartSummary() {
 
   const cart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -238,7 +237,6 @@ function showOrderMessageEmptyCart(message) {
   }, 4000);  
 }
 
-//Descriptif de la commande passer
 function getOrderDetails() {
 
   const nom = document.getElementById("nom").value;
