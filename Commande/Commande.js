@@ -133,7 +133,7 @@ document.getElementById("order-form").addEventListener("submit", function(e){
   if (lastOrder && Date.now() - lastOrder < 60000) {
     isSubmitting = false;
     showOrderMessageEmptyCart(
-      "Veuillez patienter 60 secondes avant une nouvelle commande."
+      "Veuillez patienter 1 minute avant une nouvelle commande."
     );
     return;
   }
