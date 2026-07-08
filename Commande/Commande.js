@@ -69,6 +69,7 @@ function removeFromCart(index) {
 }
 function clearCart() {
   localStorage.removeItem("cart");
+  updateCartBadge();
   displayCart();
 }
 
@@ -127,6 +128,16 @@ document.getElementById("order-form").addEventListener("submit", function(e){
   if (isSubmitting) return;
   isSubmitting = true;
 
+  const lastOrder = localStorage.getItem("lastOrder");
+
+  if (lastOrder && Date.now() - lastOrder < 60000) {
+    isSubmitting = false;
+    showOrderMessageEmptyCart(
+      "Veuillez patienter 60 secondes avant une nouvelle commande."
+    );
+    return;
+  }
+
   const cart = JSON.parse(localStorage.getItem("cart")) || [];
 
   if (cart.length === 0) {    
@@ -143,25 +154,41 @@ document.getElementById("order-form").addEventListener("submit", function(e){
 
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   const phoneRegex = /^[0-9]{10}$/;
+  const nameRegex = /^[A-Za-zÀ-ÖØ-öø-ÿ' -]{2,30}$/;
+
+  if (!nameRegex.test(nom)) {
+    isSubmitting = false;
+    showOrderMessageEmptyCart("Nom invalide");
+    return;
+  }
+
+  if (!nameRegex.test(prenom)) {
+    isSubmitting = false;
+    showOrderMessageEmptyCart("Prénom invalide");
+    return;
+  }
 
   if (!emailRegex.test(email)) {
+    isSubmitting = false;
     showOrderMessageEmptyCart("Adresse email invalide");
     return;
   }
 
   if (!phoneRegex.test(telephone)) {
+    isSubmitting = false;
     showOrderMessageEmptyCart("Numéro de téléphone invalide");
     return;
   }
 
   if (!nom || !prenom || !adresse) {
+    isSubmitting = false;
     showOrderMessageEmptyCart("Tous les champs sont obligatoires");
     return;
   }
 
   const submitButton = document.querySelector("#order-form button[type='submit']");
   submitButton.disabled = true;
-  submitButton.textContent = "Commande en cours...";   
+  submitButton.innerHTML = "Commande en cours...";  
 
   const orderId = Date.now().toString().slice(-9);
   const total = getCartTotal();
@@ -183,7 +210,9 @@ document.getElementById("order-form").addEventListener("submit", function(e){
   "template_5gunfoe",
   templateParams
   )
-  .then(() => {
+  .then(() => {    
+    localStorage.setItem("lastOrder", Date.now());
+
     isSubmitting = false;
     showOrderMessage("Votre commande a été envoyée avec succès !");
 
@@ -196,8 +225,8 @@ document.getElementById("order-form").addEventListener("submit", function(e){
       document.getElementById("order-form").reset();
       localStorage.removeItem("cart");
       displayCart();
+      updateCartBadge();
 
-      // réactiver bouton
       submitButton.disabled = false;
       submitButton.textContent = "Envoyer la commande";
 
@@ -236,6 +265,7 @@ function showOrderMessageEmptyCart(message) {
     msg.classList.remove("show");
   }, 4000);  
 }
+
 
 function getOrderDetails() {
 
