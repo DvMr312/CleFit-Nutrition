@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tribulus Terrestris</title>
+    <link rel="stylesheet" href="TribulusTerrestris.css">
+</head>
+<body>
+  <!--NavBar CléFitNutrition-->
+  <header class="NavBarNutrition">
+    <a href="../index.html" class="Logo-Nutrition">
+      <img src="../Pictures/542386526_17842046856574827_8310056253357928201_n.jpg" alt="LogoCléFitNutrition">
+    </a>  
+
+    <!--Liens du menu-->    
+    <nav class="menu-items" id="nav-links">                      
+      <a href="../Produits/Produits.html">Produits</a>
+      <a href="../Commande/Commande.html" class="cart-link">
+        Commande
+        <span id="cart-badge">0</span>
+      </a>          
+      <a href="../Contact/Contact.html">Contact</a>
+      <span class="Dark-Light-Mode" id="Dark-Light-Mode" onclick="ChangeToDarkMod()">🌙</span>
+    </nav>
+
+    <!--Menu Hamburger Mobile -->
+    <div class="Menu-Hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </header>
+
+  <main class="fiche-produit">
+    <div class="container">
+
+        <!-- Image du produit -->
+        <div class="image-produit">
+            <img src="../Pictures/Capture d’écran 2026-07-13 231654.jpeg" alt="Tribulus Terrestris">
+            <span class="stock en-stock">En stock</span>
+        </div>
+
+        <!-- Détails du produit -->
+        <div class="details-produit">
+            <h1>Tribulus Terrestris</h1>
+            <h2>Description</h2>
+            <p class="prix">35,00 €</p>
+            <p class="description">
+                Le Tribulus Terrestris est une plante largement utilisée dans le domaine de la nutrition sportive. Apprécié par les pratiquants de musculation et les sportifs réguliers, ce complément est destiné à accompagner les périodes d'entraînement intensif ainsi que les objectifs de performance et de vitalité.
+                <br><br>
+                Son format en comprimés permet une prise simple et pratique au quotidien.
+            </p>
+
+        <ul class="infos">
+            <h2>A savoir</h2><br>
+            <li>Extrait de Tribulus terrestris.</li>
+            <li>90 comprimés par boîte.</li>
+            <li>Format pratique à utiliser quotidiennement.</li>
+            <li>Très apprécié des pratiquants de musculation.</li>
+            <br><br>
+            <h2>Utilisation suggérée</h2><br>
+            Prendre les comprimés avec un grand verre d'eau au cours d'un repas en respectant les recommandations figurant sur l'emballage.
+        </ul>
+            <div class="actions">
+                <a href="../Produits/Produits.html" class="btn retour">← Retour aux produits</a>
+            </div>            
+        </div>
+    </div>
+  </main>
+
+  <script src="../Fiches-Produits.js"></script>
+  <script src="../Common.js"></script>
+</body>
+</html>

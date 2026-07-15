@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mega Glucosamine</title>
+    <link rel="stylesheet" href="MegaGlucosamine.css">
+</head>
+<body>
+  <!--NavBar CléFitNutrition-->
+  <header class="NavBarNutrition">
+    <a href="../index.html" class="Logo-Nutrition">
+      <img src="../Pictures/542386526_17842046856574827_8310056253357928201_n.jpg" alt="LogoCléFitNutrition">
+    </a>  
+
+    <!--Liens du menu-->    
+    <nav class="menu-items" id="nav-links">                      
+      <a href="../Produits/Produits.html">Produits</a>
+      <a href="../Commande/Commande.html" class="cart-link">
+        Commande
+        <span id="cart-badge">0</span>
+      </a>          
+      <a href="../Contact/Contact.html">Contact</a>
+      <span class="Dark-Light-Mode" id="Dark-Light-Mode" onclick="ChangeToDarkMod()">🌙</span>
+    </nav>
+
+    <!--Menu Hamburger Mobile -->
+    <div class="Menu-Hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </header>
+
+  <main class="fiche-produit">
+    <div class="container">
+
+        <!-- Image du produit -->
+        <div class="image-produit">
+            <img src="../Pictures/Capture d’écran 2026-07-15 180526.jpeg" alt="Mega Glucosamine">
+            <span class="stock en-stock">En stock</span>
+        </div>
+
+        <!-- Détails du produit -->
+        <div class="details-produit">
+            <h1>Mega Glucosamine</h1>
+            <h2>Description</h2>
+            <p class="prix">42,00 €</p>
+            <p class="description">
+                Mega Glucosamine est un complément alimentaire destiné aux personnes souhaitant préserver le confort et la souplesse de leurs articulations. La glucosamine est un ingrédient largement utilisé par les sportifs ainsi que par les personnes actives afin d'accompagner les efforts répétés et le vieillissement naturel des articulations.
+                <br><br>
+                Ce complément s'intègre facilement dans une routine quotidienne pour favoriser une mobilité optimale.
+            </p>
+
+            <ul class="infos">
+                <h2>A savoir</h2><br>
+                <li>À base de glucosamine.</li>
+                <li>Contribue au confort articulaire.</li>
+                <li>Convient aux sportifs et personnes actives.</li>
+                <li>Utilisation quotidienne.</li>
+                <br><br>
+                <h2>Utilisation suggérée</h2><br>
+                Prendre la dose recommandée avec un grand verre d'eau, de préférence au cours d'un repas.
+            </ul>
+            <div class="actions">
+                <a href="../Produits/Produits.html" class="btn retour">← Retour aux produits</a>
+            </div>
+        </div>
+    </div>
+  </main>
+
+  <script src="../Fiches-Produits.js"></script>
+  <script src="../Common.js"></script>
+</body>
+</html>
