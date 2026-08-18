@@ -2,4 +2,4 @@ User-agent: *
 
 Allow: /
 
-Sitemap: https://le-site.github.io/sitemap.xml
+Sitemap: https://dvmr312.github.io/CleFit-Nutrition/sitemap.xml
