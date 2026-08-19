@@ -39,7 +39,10 @@
         <input type="text" id="prenom" name="prenom" placeholder="Prénom" required>
         <input type="text" id="adresse" name="adresse" placeholder="Adresse" required>
         <input type="email" id="email" name="email" placeholder="Email" required>
-        <input type="tel" id="telephone" name="telephone" placeholder="Téléphone" pattern="[0-9]{10}"required>
+        <input type="tel" id="telephone" name="telephone" placeholder="Téléphone" pattern="[0-9]{10}"required>        
+        <input type="text" id="adresse_livraison" name="adresse_livraison" placeholder="Adresse de livraison" autocomplete="off" required>        
+        <input type="text" id="complement_adresse" name="complement_adresse" placeholder="Complément d'adresse (bâtiment, appartement, étage, porte...)">
+        <div id="suggestions-adresse"></div>
         <button type="submit">Envoyer la commande</button>
         <button type="button" onclick="clearCart()">Vider le panier</button>
     </form>

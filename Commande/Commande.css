@@ -130,6 +130,18 @@ h2 {
   box-shadow: 0 0 5px #e67e22;
 }
 
+#suggestions-adresse div {
+  cursor: pointer;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  transition: background-color 0.2s ease;
+}
+
+#suggestions-adresse div:hover {
+  background-color: #e67e22;
+  color: white;
+}
+
 /* Bouton */
 #order-form button {
   margin-top: 1rem;

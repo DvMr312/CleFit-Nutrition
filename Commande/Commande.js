@@ -150,7 +150,9 @@ document.getElementById("order-form").addEventListener("submit", function(e){
   const prenom = document.getElementById("prenom").value.trim();
   const adresse = document.getElementById("adresse").value.trim();
   const email = document.getElementById("email").value.trim();
-  const telephone = document.getElementById("telephone").value.trim();
+  const telephone = document.getElementById("telephone").value.trim();  
+  const adresse_livraison = document.getElementById("adresse_livraison").value.trim();
+  const complement_adresse = document.getElementById("complement_adresse").value.trim();
 
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   const phoneRegex = /^[0-9]{10}$/;
@@ -180,7 +182,7 @@ document.getElementById("order-form").addEventListener("submit", function(e){
     return;
   }
 
-  if (!nom || !prenom || !adresse) {
+  if (!nom || !prenom || !adresse || !email || !telephone || !adresse_livraison) {
     isSubmitting = false;
     showOrderMessageEmptyCart("Tous les champs sont obligatoires");
     return;
@@ -199,6 +201,8 @@ document.getElementById("order-form").addEventListener("submit", function(e){
     adresse,
     email,
     telephone,
+    adresse_livraison,
+    complement_adresse,
     commande: getCartSummary(),
     total: total.toFixed(2),
     date: new Date().toLocaleDateString("fr-FR"),
@@ -242,6 +246,8 @@ document.getElementById("order-form").addEventListener("submit", function(e){
   });
 });
 
+
+
 function showOrderMessage(message) {
 
   const msg = document.getElementById("order-message");
@@ -274,6 +280,8 @@ function getOrderDetails() {
   const adresse = document.getElementById("adresse").value;
   const email = document.getElementById("email").value;
   const telephone = document.getElementById("telephone").value;
+  const adresse_livraison = document.getElementById("adresse_livraison").value;  
+  const complement_adresse = document.getElementById("complement_adresse").value;
   return `
 
   Nom : ${nom}
@@ -281,6 +289,8 @@ function getOrderDetails() {
   Adresse : ${adresse}
   Email : ${email}
   Téléphone : ${telephone}
+  Adresse_livraison : ${adresse_livraison}
+  Complémént d'adresse : ${complement_adresse}
 
   ${getCartSummary()}
   `;
@@ -296,7 +306,9 @@ function downloadOrderPDF(orderId) {
   const prenom = document.getElementById("prenom").value;
   const adresse = document.getElementById("adresse").value;
   const email = document.getElementById("email").value;
-  const telephone = document.getElementById("telephone").value;
+  const telephone = document.getElementById("telephone").value;  
+  const adresse_livraison = document.getElementById("adresse_livraison").value;
+  const complement_adresse = document.getElementById("complement_adresse").value;
 
   const cart = JSON.parse(localStorage.getItem("cart")) || [];
 
@@ -355,12 +367,19 @@ function downloadOrderPDF(orderId) {
   y += 7;
 
   doc.text(`Adresse : ${adresse}`,20,y);
+  y += 7; 
+
+  doc.text(`Email : ${email}`,20,y);
   y += 7;
 
   doc.text(`Téléphone : ${telephone}`,20,y);
   y += 7;
 
-  doc.text(`Email : ${email}`,20,y);
+  doc.text(`Adresse de livraison : ${adresse_livraison}`,20,y);
+  y += 7;
+
+  doc.text(`Complément d'adresse : ${complement_adresse}`,20,y);
+  y += 7;
 
   // COMMANDE
   y += 20;
@@ -428,4 +447,46 @@ function downloadOrderPDF(orderId) {
   doc.save(`Commande_${nom}_${prenom}.pdf`);
 }
 
+const adresseLivraisonInput = document.getElementById("adresse_livraison");
+const suggestionsAdresse = document.getElementById("suggestions-adresse");
+adresseLivraisonInput.addEventListener("input", async function () {
 
+  const recherche = this.value.trim();
+
+  suggestionsAdresse.innerHTML = "";
+
+  if (recherche.length < 3) {
+    return;
+  }
+  try {
+
+    const response = await fetch(
+      `https://data.geopf.fr/geocodage/search/?q=${encodeURIComponent(recherche)}&limit=5`
+    );
+
+    if (!response.ok) {
+      throw new Error("Erreur lors de la recherche d'adresse");
+    }
+
+    const data = await response.json();
+    data.features.forEach(feature => {
+
+      const suggestion = document.createElement("div");
+
+      suggestion.textContent = feature.properties.label;
+
+      suggestion.addEventListener("click", function () {
+
+        adresseLivraisonInput.value = feature.properties.label;
+
+        suggestionsAdresse.innerHTML = "";
+
+      });
+      suggestionsAdresse.appendChild(suggestion);
+    });
+
+  } catch (error) {
+    console.error("Erreur API adresse :", error);
+  }
+
+});
